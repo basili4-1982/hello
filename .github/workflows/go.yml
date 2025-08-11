@@ -25,3 +25,8 @@ jobs:
       - run: go build -v ./...
 
       - uses: alingse/go-linter-runner@v1.0.1
+        with:
+          action: run
+          repo_url: https://github.com/owner/repo
+          install_command: go install github.com/example/linter@latest
+          linter_command: linter --flags
