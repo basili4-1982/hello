@@ -24,4 +24,4 @@ jobs:
 
       - run: go build -v ./...
 
-      - uses: go-linter-runner
+      - uses: alingse/go-linter-runner@v1.0.1
