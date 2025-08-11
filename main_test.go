@@ -13,7 +13,7 @@ func TestHandler(t *testing.T) {
 
 	handler(w, req)
 
-	if w.Code == http.StatusOK {
+	if w.Code != http.StatusOK {
 		t.Fatalf("expected status 200, got %d", w.Code)
 	}
 
