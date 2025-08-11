@@ -1,3 +1,3 @@
-module github.com/username/go-ci-demo
+module github.com/basili4-1982/hello.git
 
 go 1.22
