@@ -27,3 +27,7 @@ func main() {
 		log.Fatal(err)
 	}
 }
+
+func init() {
+	log.SetFlags(log.LstdFlags | log.Lshortfile)
+}
