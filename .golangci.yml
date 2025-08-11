@@ -1,0 +1,18 @@
+run:
+  timeout: 2m
+  tests: true
+
+linters:
+  enable:
+    - govet
+    - gofmt
+    - goimports
+    - gocyclo
+    - errcheck
+    - staticcheck
+    - gosimple
+    - unused
+
+linters-settings:
+  gocyclo:
+    min-complexity: 15
