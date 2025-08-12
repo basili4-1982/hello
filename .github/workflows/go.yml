@@ -1,32 +1,22 @@
 name: Go CI
-
 on: [ push, pull_request ]
-
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-
       - uses: actions/checkout@v4
-
       - uses: actions/setup-go@v4
-
         with:
-
           go-version: '1.22'
-
       - run: go mod tidy
-
       - run: go test ./...
-
       - run: go build -v ./...
 
-      - uses: alingse/go-linter-runner@v1.0.1
+      - name: Run with YAML config
+        uses: alingse/go-linter-runner@v1.0.1
         with:
           action: run
-          repo_url: https://github.com/owner/repo
-          install_command: go install github.com/example/linter@latest
-          linter_command: linter --flags
+          yaml_config: .golangci.yml
+          repo_url: ${{ inputs.repo_url }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
