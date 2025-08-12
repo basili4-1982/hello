@@ -12,11 +12,11 @@ jobs:
       - run: go test ./...
       - run: go build -v ./...
 
-      - name: Run with YAML config
+      - name: Run lint
         uses: alingse/go-linter-runner@v1.0.1
         with:
           action: run
           yaml_config: .golangci.yml
-          repo_url: ${{ vars.GITHUB_REPOSITORY }}
+          repo_url: ${{ github.action_repository}}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
