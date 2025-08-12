@@ -16,6 +16,7 @@ jobs:
         uses: alingse/go-linter-runner@v1.0.1
         with:
           action: run
+          install_command: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
           yaml_config: .golangci.yml
           repo_url: ${{ github.repositoryUrl}}
         env:
