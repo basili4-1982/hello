@@ -13,11 +13,7 @@ jobs:
       - run: go build -v ./...
 
       - name: Run lint
-        uses: alingse/go-linter-runner@v1.0.1
+        uses: golangci/golangci-lint-action@v3
         with:
-          action: run
-          install_command: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-          yaml_config: .golangci.yml
-          repo_url: ${{ github.repositoryUrl}}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          version: v1.64.0  # Версия golangci-lint
+          args: --timeout=5m
