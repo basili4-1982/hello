@@ -17,6 +17,6 @@ jobs:
         with:
           action: run
           yaml_config: .golangci.yml
-          repo_url: ${{ github.action_repository}}
+          repo_url: ${{ github.repository}}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
