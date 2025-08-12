@@ -12,7 +12,7 @@ jobs:
       - name: Run lint
         uses: golangci/golangci-lint-action@v3
         with:
-          version: v1.64.0  # Версия golangci-lint
+          version: v1.64.8  # Версия golangci-lint
           args: --timeout=5m
       - run: go mod tidy
       - run: go test ./...
